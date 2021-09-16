@@ -27,12 +27,14 @@ h1 a:focus {
 body {
   background: offwhite;
 }
+
 .photoGrid {
   display: flex;
   flex-wrap: wrap;
   max-width: 1000px;
   margin: 0 auto;
 }
+
 .figure {
   flex-basis: calc(33.333% - 4rem);
   border: 1px solid #d3d3d3;
@@ -73,6 +75,7 @@ body {
   width: 100%;
   margin: 0;
 }
+
 .photo {
   width: calc(100% + 4rem);
   margin-left: -2rem;

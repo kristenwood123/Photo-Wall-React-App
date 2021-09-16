@@ -1,13 +1,16 @@
 import React from 'react'
 
-const Photo = ({ post }) => {
+const Photo = ({ post, removePhoto }) => {
   const { id, description, imageLink } = post;
+
   return (
-    <div key={id}>
-      <a href={imageLink}>
-        <p>{description}</p>
-      </a>
-    </div>
+    <figure className='figure'>
+      <img src={imageLink} alt={description}/>
+        <figcaption>{description}</figcaption>
+        <div className="button-container">
+          <button className="remove-button" onClick={() => removePhoto(id)}>Remove</button>
+        </div>
+    </figure>
   )
 }
 
