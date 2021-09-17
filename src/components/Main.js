@@ -28,13 +28,12 @@ const Main = () => {
 
   return (
     <div>
-      <Route path='/' render={() => (
+      <Route exact path='/' render={() => (
         <div>
           <Title/>
           <Photowall posts={posts} removePhoto={removePhoto}/>
         </div>
       )} />   
-
       <Route path='/addPhoto' component={AddPhoto}/>
     </div>
 
