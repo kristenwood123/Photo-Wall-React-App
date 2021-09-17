@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Photowall from './Photowall.js'
 import Title from './Title.js'
-
+import AddPhoto from './AddPhoto.js'
+import { Route } from 'react-router-dom'
 
 const Main = () => {
 
@@ -27,9 +28,16 @@ const Main = () => {
 
   return (
     <div>
-      <Title/>
-      <Photowall posts={posts} removePhoto={removePhoto}/>
+      <Route path='/' render={() => (
+        <div>
+          <Title/>
+          <Photowall posts={posts} removePhoto={removePhoto}/>
+        </div>
+      )} />   
+
+      <Route path='/addPhoto' component={AddPhoto}/>
     </div>
+
   )
 }
 
