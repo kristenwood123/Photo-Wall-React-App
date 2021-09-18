@@ -26,6 +26,11 @@ const Main = () => {
     return setPosts(updatedPosts) 
  }
 
+ const addPhoto = (postSubmitted) => {
+   const addedPosts = [...posts, postSubmitted]
+   return setPosts(addedPosts)
+ }
+
   return (
     <div>
       <Route exact path='/' render={() => (
@@ -34,7 +39,11 @@ const Main = () => {
           <Photowall posts={posts} removePhoto={removePhoto}/>
         </div>
       )} />   
-      <Route path='/addPhoto' component={AddPhoto}/>
+      <Route path='/addPhoto' render={() => (
+        <AddPhoto onAddPhoto={(addedPost) => {
+          addPhoto(addedPost)
+        }}/>
+      )}/>
     </div>
 
   )
