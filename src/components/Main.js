@@ -28,6 +28,7 @@ const Main = () => {
 
  const addPhoto = (postSubmitted) => {
    const addedPosts = [...posts, postSubmitted]
+   console.log(addedPosts);
    return setPosts(addedPosts)
  }
 
@@ -39,9 +40,12 @@ const Main = () => {
           <Photowall posts={posts} removePhoto={removePhoto}/>
         </div>
       )} />   
-      <Route path='/addPhoto' render={() => (
-        <AddPhoto onAddPhoto={(addedPost) => {
+      <Route path='/addPhoto' render={({history}) => (
+        <AddPhoto 
+          posts={posts}
+          onAddPhoto={(addedPost) => {
           addPhoto(addedPost)
+          history.push('/')
         }}/>
       )}/>
     </div>

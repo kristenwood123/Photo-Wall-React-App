@@ -1,13 +1,14 @@
 import React from 'react'
 
-const AddPhoto = ({ onAddPhoto }) => {
+const AddPhoto = ({ onAddPhoto, posts }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const imageLink = e.target.elements.link.value;
     const description = e.target.elements.description.value;
+
     const post = {
-      id: 0,
+      id: posts.length.toString(),
       description: description,
       imageLink: imageLink
     }
@@ -15,6 +16,7 @@ const AddPhoto = ({ onAddPhoto }) => {
       onAddPhoto(post)
     }
   }
+
   return (
     <div>
       <h1>Photowall</h1>
