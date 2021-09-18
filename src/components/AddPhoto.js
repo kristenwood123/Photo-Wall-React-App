@@ -8,7 +8,7 @@ const AddPhoto = ({ onAddPhoto, posts }) => {
     const description = e.target.elements.description.value;
 
     const post = {
-      id: posts.length.toString(),
+      id: Number(new Date()),
       description: description,
       imageLink: imageLink
     }
